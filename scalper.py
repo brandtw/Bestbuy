@@ -3,9 +3,9 @@ import time
 import threading
 
 # To do: beeper, threading, continuously click "please wait" IF it appears, quickest possible way to get to the checkout button
-# browser = webdriver.Chrome("C:/Users/chase/Desktop/Coding/Bestbuy/chromedriver.exe")
 
 browser = webdriver.Chrome("C:/Users/chase/Desktop/Coding/Bestbuy/chromedriver.exe")
+# browser = webdriver.Chrome("C:/Users/brand/OneDrive/Documents/Coding/Bestbuy/chromedriver.exe")
 
 def my_function(address):
     browser.get(address)
@@ -30,5 +30,5 @@ def my_function(address):
                     buyButton = True
 
 # GPU http Links:
-my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440")
-#my_function("https://www.bestbuy.com/site/wd-blue-4tb-internal-sata-hard-drive-for-desktops/9026007.p?skuId=9026007")
+#my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440")
+my_function("https://www.bestbuy.com/site/wd-blue-4tb-internal-sata-hard-drive-for-desktops/9026007.p?skuId=9026007")
