@@ -1,11 +1,12 @@
 from selenium import webdriver
+import os
 import time
 import threading
 
 # To do: beeper, threading, continuously click "please wait" IF it appears, quickest possible way to get to the checkout button
-
-browser = webdriver.Chrome("C:/Users/chase/Desktop/Coding/Bestbuy/chromedriver.exe")
-# browser = webdriver.Chrome("C:/Users/brand/OneDrive/Documents/Coding/Bestbuy/chromedriver.exe")
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname,'chromedriver.exe')
+browser = webdriver.Chrome(filename)
 
 def my_function(address):
     browser.get(address)
