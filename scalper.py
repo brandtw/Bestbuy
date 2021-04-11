@@ -6,7 +6,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from playsound import playsound
-import pyautogui
 import os
 import time
 import threading
@@ -21,14 +20,14 @@ dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname,'chromedriver.exe')
 browser = webdriver.Chrome(filename)
 soundname = os.path.join(dirname,'giveyouup.mp3')       # We should thread this sound when the bot clicks "Add to Cart" to notify the user that the item is now in stock.
-wait = WebDriverWait(browser,40)                        # Webpage timeout set to max 40 seconds                                                                     
+wait = WebDriverWait(browser,60)                        # Webpage timeout set to max 60 seconds                                                                     
 
 # Main Function
 def my_function(address):
     
     # Browser Launch Sequence + Full Screen
     browser.get(address)
-    pyautogui.hotkey('winleft', 'up')
+    browser.maximize_window()
     buyButton = False
 
     # Auto Login (FIXED)
@@ -51,7 +50,7 @@ def my_function(address):
                 wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))        # Sleep until button is clickable
                 browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK. We should thread in a sound here to notify user.
                 wait.until(EC.presence_of_element_located((By.CLASS_NAME,"spinner-sm"))) == None        # Checks to see if 'add to cart' action is still loading. Does this work?
-                #Here is where we might be able to have the computer wait for the "please wait" to convert into a clickable button. Speak with twins.
+                # #Here is where we might be able to have the computer wait for the "please wait" to convert into a clickable button. Speak with twins.
                 browser.find_element_by_class_name("shop-cart-icon").click()                            # Consider adding: if NOT located at 'https://www.bestbuy.com/cart', click shop cart icon again and wait. Else, click checkout button...
                 browser.find_element_by_class_name("btn-primary").click()                               
             except:
