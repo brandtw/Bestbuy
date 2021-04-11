@@ -32,9 +32,9 @@ def my_function(address):
     buyButton = False
 
     # Auto Login (NOT CURRENTLY WORKING. Will not click sign in button.)
-    time.sleep(6)
+    time.sleep(12)
     browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-    browser.find_element_by_partial_link_text('signin').click            # I CANNOT FIGURE OUT HOW TO HIT THE SIGN IN BUTTON FOR THE LIFE OF ME
+    # browser.find_element_by_partial_link_text('signin').click            # I CANNOT FIGURE OUT HOW TO HIT THE SIGN IN BUTTON FOR THE LIFE OF ME
     wait.until(EC.presence_of_element_located((By.ID,"fld-e")))
     browser.find_element_by_id("fld-e").send_keys(username)
     browser.find_element_by_id("fld-p1").send_keys(password)
@@ -44,8 +44,7 @@ def my_function(address):
     # Item Selection + Cart + Checkout Automation
     while not buyButton:        
         try:                 
-            outofstockbtn = browser.find_element_by_xpath("//button[contains(@class, 'btn-disabled')]") # THIS IS BROKEN!!!!!! Research way to keep code from waiting for website to load?
-            time.sleep(1)                                                                               # When this gets fixed, we should remove this function.
+            outofstockbtn = browser.find_element_by_xpath("//button[contains(@class, 'btn-disabled')]") # This works, but there is a bug when you sign in first. Then it won't refresh the page for some reason. I even tried pyautogui.hotkey('f5')
             browser.refresh()
         except:
             try:                                                        
@@ -59,7 +58,7 @@ def my_function(address):
 
 
 # Threading Objects
-#t1 = threading.Thread(target=gpu3060ti)
+# t1 = threading.Thread(target=gpu3060ti)
 # t2 = gpu3070()
 # g3 = gpu3080()
 # g4 = gpu3090()
@@ -74,8 +73,8 @@ def my_function(address):
 
 # GPU http Links
 #my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3060-ti-8gb-gddr6-pci-express-4-0-graphics-card-steel-and-black/6439402.p?skuId=6439402")         # 3060 ti
-#my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442")    # 3070
-my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440")       # 3080
+my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442")    # 3070
+# my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440")       # 3080
 #my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3090-24gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429434.p?skuId=6429434")       # 3090
 
 # Test http Links
