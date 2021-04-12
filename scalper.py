@@ -46,18 +46,15 @@ def my_function(address):
             outofstockbtn = browser.find_element_by_xpath("//button[contains(@class, 'btn-disabled')]") #._execute(Command.IS_ELEMENT_ENABLED)[False] # This works, but there is a bug when you sign in first. Then it won't refresh the page for some reason. I even tried pyautogui.hotkey('f5')
             browser.refresh()
         except:
-            while not buyButton:
-                try:
-                    wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))        # Sleep until button is clickable
-                    browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK. We should thread in a sound here to notify user.
-                    EC.presence_of_element_located((By.XPATH,'//*[@id="shop-cart-icon-f730fab1-fc4e-4c71-9098-9c18747d3e4d"]/div/div/div/a/div'))
-                    browser.find_element_by_class_name("shop-cart-icon").click()                            # Consider adding: if NOT located at 'https://www.bestbuy.com/cart', click shop cart icon again and wait. Else, click checkout button...
-                    wait.until(EC.presence_of_element_located((By.CLASS_NAME,"btn-primary")))
-                    browser.find_element_by_class_name("btn-primary").click()
-                    buyButton = True
-                #Here is where we might be able to have the computer wait for the "please wait" to convert into a clickable button. Speak with twins.
-                except:
-                    pass
+            try:                                                        
+                wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))        # Sleep until button is clickable
+                browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK. We should thread in a sound here to notify user.
+                wait.until(EC.presence_of_element_located((By.CLASS_NAME,"spinner-sm"))) == None        # Checks to see if 'add to cart' action is still loading. Does this work?
+                # #Here is where we might be able to have the computer wait for the "please wait" to convert into a clickable button. Speak with twins.
+                browser.find_element_by_class_name("shop-cart-icon").click()                            # Consider adding: if NOT located at 'https://www.bestbuy.com/cart', click shop cart icon again and wait. Else, click checkout button...
+                browser.find_element_by_class_name("btn-primary").click()                               
+            except:
+                buyButton = True
 
 
 # Threading Objects
