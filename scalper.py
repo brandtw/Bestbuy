@@ -12,8 +12,8 @@ import threading
 
 # Username and Password User Input
 print("\n!!!!!!!!!!!!!!!!! MAKE SURE YOUR INFORMATION IS 100% CORRECT. DOUBLE CHECK. !!!!!!!!!!!!!!!!!")
-#username = input("Username: ")
-#password = input("Password: ")
+username = input("Username: ")
+password = input("Password: ")
 
 # Main Prototyping
 dirname = os.path.dirname(__file__)
@@ -42,21 +42,15 @@ def my_function(address):
 
     # Item Selection + Cart + Checkout Automation
     while not buyButton:        
-        try:                 
-            print("success0")
-            wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))
-            print("success1")
-            x = browser.find_element_by_class_name("add-to-cart-button").click()
-            x == None
-            print(x)
-            print("success2")
-            browser.refresh()
-            print("success3")
+        try:
+            wait.until(EC.presence_of_element_located((By.XPATH,'/html/body/div[3]/main/div[2]/div[3]/div[2]')))
+            browser.find_element_by_class_name("btn-disabled")
+            browser.refresh()            
         except:
             while not buyButton:
                 try:
-                    # wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))        # Sleep until button is clickable
-                    # browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK. We should thread in a sound here to notify user.
+                    wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))        # Sleep until button is clickable
+                    browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK. We should thread in a sound here to notify user.
                     EC.presence_of_element_located((By.CLASS_NAME,'added-to-cart'))
                     browser.find_element_by_class_name("shop-cart-icon").click()                            # Consider adding: if NOT located at 'https://www.bestbuy.com/cart', click shop cart icon again and wait. Else, click checkout button...
                     wait.until(EC.presence_of_element_located((By.CLASS_NAME,"checkout-buttons")))
