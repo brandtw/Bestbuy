@@ -1,11 +1,11 @@
-# To do: beeper, threading, consider IF function for survey, fix comments below, during threading maybe have multiple accounts?
+# To do: threading, consider IF function for survey, fix comments below, during threading maybe have multiple accounts?
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from playsound import playsound
+from playsound import playsound 
 import os
 import time
 import threading
@@ -19,7 +19,7 @@ password = input("Password: ")
 dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname,'chromedriver.exe')
 browser = webdriver.Chrome(filename)
-soundname = os.path.join(dirname,'giveyouup.mp3')       # We should thread this sound when the bot clicks "Add to Cart" to notify the user that the item is now in stock.
+RickRoll = os.path.join(dirname,'giveyouup.mp3')
 wait = WebDriverWait(browser,6000)                      # Webpage timeout set to max 6000 seconds                                                                     
 
 # Main Function
@@ -50,10 +50,11 @@ def my_function(address):
             while not buyButton:
                 try:
                     wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))        # Sleep until button is clickable
-                    browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK. We should thread in a sound here to notify user.
+                    browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK
+                    playsound(RickRoll, block=False)
                     print("x")
                     time.sleep(5)                                                                           # WE NEED TO REPLACE THIS WITH SOMETHING FASTER/MORE RELIABLE
-                    browser.find_element_by_class_name("added-to-cart")                                     # Archive: Previous -- EC.presence_of_element_located((By.CLASS_NAME,'added-to-cart'))
+                    browser.find_element_by_class_name("added-to-cart")
                     print("Success!!!")
                     browser.find_element_by_class_name("go-to-cart-button").click()
                     wait.until(EC.presence_of_element_located((By.CLASS_NAME,"checkout-buttons")))
@@ -80,12 +81,12 @@ def my_function(address):
 # GPU http Links
 #my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3060-ti-8gb-gddr6-pci-express-4-0-graphics-card-steel-and-black/6439402.p?skuId=6439402")         # 3060 ti
 # my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442")    # 3070
-my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440")       # 3080
+# my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440")       # 3080
 #my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3090-24gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429434.p?skuId=6429434")       # 3090
 
 # Test http Links
 #my_function("https://www.bestbuy.com/site/wd-blue-4tb-internal-sata-hard-drive-for-desktops/9026007.p?skuId=9026007")
-# my_function("https://www.bestbuy.com/site/apple-10-2-inch-ipad-latest-model-8th-generation-with-wi-fi-32gb-space-gray/5199701.p?skuId=5199701")
+my_function("https://www.bestbuy.com/site/apple-10-2-inch-ipad-latest-model-8th-generation-with-wi-fi-32gb-space-gray/5199701.p?skuId=5199701")
 
 
 # Survey Invite button ID = survey_invite_no <--------------- INSERT IF FUNCTION TO CLICK NO HERE?
