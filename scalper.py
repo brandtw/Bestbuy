@@ -9,6 +9,7 @@ from playsound import playsound
 import os
 import time
 import threading
+import datetime
 
 # Username and Password User Input
 print("\n!!!!!!!!!!!!!!!!! MAKE SURE YOUR INFORMATION IS 100% CORRECT. DOUBLE CHECK. !!!!!!!!!!!!!!!!!")
@@ -49,16 +50,15 @@ def my_function(address):
         except:
             while not buyButton:
                 try:
-                    browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK
+                    browser.find_element_by_xpath('//*[@id="shop-cart-icon-02c028e8-4638-43e6-96ff-96d1c70cfe72"]/div/div/div/a/div')
                     #playsound(RickRoll, block=False)
-                    EC.presence_of_element_located((By.CLASS_NAME, "added-to-cart-button"))
                     #wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="shop-cart-icon-02c028e8-4638-43e6-96ff-96d1c70cfe72"]/div/div/div/a/div'))) 
                     browser.find_element_by_class_name("shop-cart-icon").click()
                     wait.until(EC.presence_of_element_located((By.CLASS_NAME,"checkout-buttons")))
                     browser.find_element_by_xpath('//*[@id="cartApp"]/div[2]/div[1]/div/div[2]/div[1]/section[2]/div/div/div[3]/div/div[1]/button').click() # Chase: Consider changing
                     buyButton = True
                 except:
-                    pass
+                    browser.find_element_by_class_name("add-to-cart-button").click()
 
 
 # # Threading Objects
