@@ -49,15 +49,11 @@ def my_function(address):
         except:
             while not buyButton:
                 try:
-                    wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))            # Sleep until button is clickable
-                    # if browser.current_url != "https://www.bestbuy.com/cart":
                     browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK
-                    playsound(RickRoll, block=False)
-                    print("x")
-                    time.sleep(5)                                                                             # WE NEED TO REPLACE THIS WITH SOMETHING FASTER/MORE RELIABLE
-                    browser.find_element_by_class_name("added-to-cart")
-                    print("Success!!!")
-                    browser.find_element_by_class_name("go-to-cart-button").click()
+                    #playsound(RickRoll, block=False)
+                    EC.presence_of_element_located((By.CLASS_NAME, "added-to-cart-button"))
+                    #wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="shop-cart-icon-02c028e8-4638-43e6-96ff-96d1c70cfe72"]/div/div/div/a/div'))) 
+                    browser.find_element_by_class_name("shop-cart-icon").click()
                     wait.until(EC.presence_of_element_located((By.CLASS_NAME,"checkout-buttons")))
                     browser.find_element_by_xpath('//*[@id="cartApp"]/div[2]/div[1]/div/div[2]/div[1]/section[2]/div/div/div[3]/div/div[1]/button').click() # Chase: Consider changing
                     buyButton = True

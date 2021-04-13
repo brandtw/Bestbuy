@@ -1,7 +1,7 @@
 import pyautogui
 import time
 import os
-# from playsound import playsound
+from playsound import playsound
 
 dirname = os.path.dirname(__file__)
 RickRoll = os.path.join(dirname,'giveyouup.mp3')
@@ -31,4 +31,4 @@ while True:
     if checkout != None:
         pyautogui.moveTo(80,80)
         pyautogui.click(checkout)
-        # playsound(RickRoll, block=True)
+        playsound(RickRoll)
