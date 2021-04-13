@@ -18,8 +18,8 @@ def my_function(address):
 
     # Main Prototyping  
     dirname = os.path.dirname(__file__)
-    filename = os.path.join(dirname,'chromedriver.exe')
-    browser = webdriver.Chrome(filename)
+    filename = os.path.join(dirname,'geckodriver.exe')
+    browser = webdriver.Firefox(executable_path = filename)
     RickRoll = os.path.join(dirname,'giveyouup.mp3')
     wait = WebDriverWait(browser,6000)                      # Webpage timeout set to max 6000 seconds  
     
@@ -65,13 +65,15 @@ thread1 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidi
 #thread3 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440",))
 #thread4 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidia-geforce-rtx-3090-24gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429434.p?skuId=6429434",))
 thread1.start()
-#time.sleep(5)
+# time.sleep(5)
 # thread2.start()
 # time.sleep(5)
 # thread3.start()
 # time.sleep(5)
 # thread4.start()
 
+#thread5 = Thread(target = my_function, args=("https://www.bestbuy.com/site/wd-blue-4tb-internal-sata-hard-drive-for-desktops/9026007.p?skuId=9026007",))
+#thread5.start()
 
 
 

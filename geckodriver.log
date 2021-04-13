@@ -1,0 +1,97 @@
+1618305467421	geckodriver	INFO	Listening on 127.0.0.1:51767
+1618305504298	geckodriver	INFO	Listening on 127.0.0.1:51782
+1618305507328	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\brand\\AppData\\Local\\Temp\\rust_mozprofilegHtOP0"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1618305509699	Marionette	INFO	Listening on port 51790
+1618305509990	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.bestbuy.com/identity/signin?token=tid%3A399fe102-9c39-11eb-8313-02181779bccb, line 158: ReferenceError: initializer is not defined
+JavaScript error: https://www.bestbuy.com/~assets/bby/_com/shop/lib-dai/dist/client/client-6009ba6739d0dec68b1532c993ab7cfc.mjs, line 1: ReferenceError: actionLog is not defined
+1618305521729	Marionette	INFO	Stopped listening on port 51790
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618305535967	geckodriver	INFO	Listening on 127.0.0.1:51905
+1618305539008	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\brand\\AppData\\Local\\Temp\\rust_mozprofileKbr8r5"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1618305540936	Marionette	INFO	Listening on port 51914
+1618305541054	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.bestbuy.com/identity/signin?token=tid%3A4c6e2db8-9c39-11eb-8313-02181779bccb, line 158: ReferenceError: initializer is not defined
+JavaScript error: https://www.bestbuy.com/~assets/bby/_com/shop/lib-dai/dist/client/client-6009ba6739d0dec68b1532c993ab7cfc.mjs, line 1: ReferenceError: actionLog is not defined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://www.bestbuy.com/~assets/bby/_com/shop/location-persistence/dist/client/client-07404307dcd4f669a604c5a39c32cc2e.mjs, line 1: Error: storeId required
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1618305613688	Marionette	INFO	Stopped listening on port 51914
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618305724384	geckodriver	INFO	Listening on 127.0.0.1:52176
+1618305727408	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\brand\\AppData\\Local\\Temp\\rust_mozprofileqj9Wjm"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1618305729178	Marionette	INFO	Listening on port 52184
+1618305729461	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.bestbuy.com/identity/signin?token=tid%3Abd130073-9c39-11eb-acb2-06b73b7ec68d, line 158: ReferenceError: initializer is not defined
+JavaScript error: https://www.bestbuy.com/~assets/bby/_com/shop/lib-dai/dist/client/client-6009ba6739d0dec68b1532c993ab7cfc.mjs, line 1: ReferenceError: actionLog is not defined
+1618305742613	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:231:19
+TimedPromise@chrome://marionette/content/sync.js:216:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:433:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1618305744099	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:231:19
+TimedPromise@chrome://marionette/content/sync.js:216:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:433:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://www.bestbuy.com/~assets/bby/_com/shop/location-persistence/dist/client/client-07404307dcd4f669a604c5a39c32cc2e.mjs, line 1: Error: storeId required
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://www.bestbuy.com/~assets/bby/_com/cart.bundle-981c4438855013a83ed692003c143656.js, line 148: TypeError: e is null
+JavaScript error: https://assets.bbystatic.com/shop/master-ad/dist/client/client-d85836ea3c007bcce44b630c9258e9e0.mjs, line 1: TypeError: t.props.breadCrumb is undefined
+1618305761622	Marionette	INFO	Stopped listening on port 52184
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
