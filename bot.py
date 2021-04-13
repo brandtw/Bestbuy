@@ -1,5 +1,10 @@
 import pyautogui
 import time
+import os
+from playsound import playsound
+
+dirname = os.path.dirname(__file__)
+RickRoll = os.path.join(dirname,'giveyouup.mp3')
 
 flag = 0
 time.sleep(5)
@@ -16,6 +21,7 @@ while flag == 0:
         time.sleep(1)
 
 while True:
+    playsound(RickRoll, block=False)
     addtocart = pyautogui.locateCenterOnScreen("addtocart.png")
     gotocart = pyautogui.locateCenterOnScreen("gotocart.png")
     checkout = pyautogui.locateCenterOnScreen("checkout.png")

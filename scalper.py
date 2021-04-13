@@ -12,8 +12,10 @@ import threading
 
 # Username and Password User Input
 print("\n!!!!!!!!!!!!!!!!! MAKE SURE YOUR INFORMATION IS 100% CORRECT. DOUBLE CHECK. !!!!!!!!!!!!!!!!!")
-username = input("Username: ")
-password = input("Password: ")
+username = 'chadw2771@gmail.com'
+password = '@7d&O,#8Y+l{rvo3*`y'
+# username = input("Username: ")
+# password = input("Password: ")
 
 # Main Prototyping
 dirname = os.path.dirname(__file__)
@@ -43,17 +45,18 @@ def my_function(address):
     # Item Selection + Cart + Checkout Automation
     while not buyButton:        
         try:
-            wait.until(EC.presence_of_element_located((By.CLASS_NAME,'fulfillment-add-to-cart-button')))    # BRANDT, I had to change this. Talk to me before editing.
+            wait.until(EC.presence_of_element_located((By.CLASS_NAME,'fulfillment-add-to-cart-button')))        # BRANDT, I had to change this. Talk to me before editing.
             browser.find_element_by_class_name("btn-disabled")
             browser.refresh()            
         except:
             while not buyButton:
                 try:
-                    wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))        # Sleep until button is clickable
+                    wait.until(EC.presence_of_element_located((By.CLASS_NAME,"add-to-cart-button")))            # Sleep until button is clickable
+                    # if browser.current_url != "https://www.bestbuy.com/cart":
                     browser.find_element_by_class_name("add-to-cart-button").click()                        # ADD TO CART BUTTON CLICK
                     playsound(RickRoll, block=False)
                     print("x")
-                    time.sleep(5)                                                                           # WE NEED TO REPLACE THIS WITH SOMETHING FASTER/MORE RELIABLE
+                    # time.sleep(5)                                                                             # WE NEED TO REPLACE THIS WITH SOMETHING FASTER/MORE RELIABLE
                     browser.find_element_by_class_name("added-to-cart")
                     print("Success!!!")
                     browser.find_element_by_class_name("go-to-cart-button").click()
@@ -65,28 +68,28 @@ def my_function(address):
 
 
 # Threading Objects
-# t1 = threading.Thread(target=gpu3060ti)
-# t2 = gpu3070()
+t1 = threading.Thread(target=my_function1)
+t2 = threading.Thread(target=my_function2)
 # g3 = gpu3080()
 # g4 = gpu3090()
 
-# t1.start()
-# g2.start()
+t1.start()
+t2.start()
 # g3.start()
 # g4.start()
 
-# t1.join()
-
+t1.join()
+t2.join()
 
 # GPU http Links
-#my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3060-ti-8gb-gddr6-pci-express-4-0-graphics-card-steel-and-black/6439402.p?skuId=6439402")         # 3060 ti
-# my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442")    # 3070
+my_function1("https://www.bestbuy.com/site/nvidia-geforce-rtx-3060-ti-8gb-gddr6-pci-express-4-0-graphics-card-steel-and-black/6439402.p?skuId=6439402")         # 3060 ti
+my_function2("https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442")    # 3070
 # my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440")       # 3080
 #my_function("https://www.bestbuy.com/site/nvidia-geforce-rtx-3090-24gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429434.p?skuId=6429434")       # 3090
 
 # Test http Links
 #my_function("https://www.bestbuy.com/site/wd-blue-4tb-internal-sata-hard-drive-for-desktops/9026007.p?skuId=9026007")
-my_function("https://www.bestbuy.com/site/apple-10-2-inch-ipad-latest-model-8th-generation-with-wi-fi-32gb-space-gray/5199701.p?skuId=5199701")
+# my_function("https://www.bestbuy.com/site/apple-10-2-inch-ipad-latest-model-8th-generation-with-wi-fi-32gb-space-gray/5199701.p?skuId=5199701")
 
 
 # Survey Invite button ID = survey_invite_no <--------------- INSERT IF FUNCTION TO CLICK NO HERE?
