@@ -28,7 +28,7 @@ def my_function(address):
     buyButton = False
 
     # Auto Login
-    time.sleep(3)
+    time.sleep(5)
     browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
     browser.find_element_by_xpath('//*[@id="large-footer"]/div[2]/div[1]/div[1]/ul/li[3]').click()
     wait.until(EC.presence_of_element_located((By.ID,"fld-e")))
@@ -42,7 +42,8 @@ def my_function(address):
         try:
             wait.until(EC.presence_of_element_located((By.CLASS_NAME,'fulfillment-add-to-cart-button')))
             browser.find_element_by_class_name("btn-disabled")
-            browser.refresh()            
+            browser.refresh()
+            time.sleep(1)            
         except:
             playsound(RickRoll, block=False)
             while not buyButton:
@@ -61,16 +62,16 @@ def my_function(address):
 # GPU http Links
 
 thread1 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidia-geforce-rtx-3060-ti-8gb-gddr6-pci-express-4-0-graphics-card-steel-and-black/6439402.p?skuId=6439402",))
-#thread2 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442",))
-#thread3 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440",))
-#thread4 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidia-geforce-rtx-3090-24gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429434.p?skuId=6429434",))
+thread2 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442",))
+thread3 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidia-geforce-rtx-3080-10gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429440.p?skuId=6429440",))
+thread4 = Thread(target = my_function, args=("https://www.bestbuy.com/site/nvidia-geforce-rtx-3090-24gb-gddr6x-pci-express-4-0-graphics-card-titanium-and-black/6429434.p?skuId=6429434",))
 thread1.start()
-# time.sleep(5)
-# thread2.start()
-# time.sleep(5)
-# thread3.start()
-# time.sleep(5)
-# thread4.start()
+time.sleep(10)
+thread2.start()
+time.sleep(10)
+thread3.start()
+time.sleep(10)
+thread4.start()
 
 #thread5 = Thread(target = my_function, args=("https://www.bestbuy.com/site/wd-blue-4tb-internal-sata-hard-drive-for-desktops/9026007.p?skuId=9026007",))
 #thread5.start()
